@@ -8,6 +8,8 @@ Companion course to *Claude Code in Production* (the book at `github.com/YawLabs
 
 Course link: https://yaw.sh/courses/production-claude-code
 
+Note: `main` is documentation only. The overlay and the demo app live at the module tags (`module-1-final` through `module-4-final`) -- check one out before the SETUP.md commands will work.
+
 ## What this repo is (and isn't)
 
 This is a **reference**, not a substitute for the course.

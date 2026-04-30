@@ -2,6 +2,8 @@
 
 How to get the reference repo running locally and wired up to Claude Code.
 
+Note: the commands below assume you have checked out a module tag (`module-1-final` and onward). The `main` branch is documentation only and has no `package.json`.
+
 ## Prerequisites
 
 * **Claude Code installed.** The course assumes a working Claude Code installation. If you are on the Anthropic-managed CLI, you are good. If you are on a custom build, the rule and skill paths in the reference may sit in a slightly different place; the SETUP notes per module call out the differences.
@@ -36,7 +38,7 @@ The repo's `.claude/` directory contains the overlay for this checkout. Claude C
 To verify, in a Claude Code session, run:
 
 ```
-/yaw-status
+/status
 ```
 
 (Module 2 onwards has a `status` skill that reports mode, model, effort, active overlay. Module 1 doesn't have it yet; check by inspecting the model field in the harness UI.)
