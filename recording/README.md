@@ -10,4 +10,6 @@ recording/
 +-- module-4-plan.md
 ```
 
+Currently scaffolded -- the per-module plans land as each video is produced.
+
 If you're considering producing your own technical course, these plans may be useful as templates. The format is opinionated and worked for me; your shape may vary.

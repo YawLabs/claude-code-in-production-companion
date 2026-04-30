@@ -9,4 +9,6 @@ ops/
 +-- support-triage.md           # how incoming questions get routed
 ```
 
+Currently scaffolded -- the operational guides land as the storefront and fulfillment pipeline come online.
+
 If you're building an adjacent course-as-a-product setup, these are the patterns I converged on. The shape is shared with the *Production MCP Servers* course (`yawlabs/production-mcp`) -- both courses use the same fulfillment pipeline.
