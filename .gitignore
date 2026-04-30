@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
+.env
+.env.local
+.claude/settings.local.json
+.claude/memory/personal/
