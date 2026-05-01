@@ -10,7 +10,7 @@ lectures/
 +-- module-4-team-posture.md
 ```
 
-Modules 1, 2, and 3 are populated. Module 4 is still scaffolded -- its script lands as that video is recorded.
+All four modules are populated.
 
 The scripts include cues for the recording (when to switch to the screen capture, when to pause for emphasis, where the segments break for the video editor) but read fine as standalone documents if you prefer prose to video.
 

@@ -18,6 +18,6 @@ exercises/
     +-- solution.md
 ```
 
-Modules 1, 2, and 3 are populated. Module 4 is still scaffolded -- its files land alongside the `module-4-final` tag as that module is finalized.
+All four modules are populated.
 
 Open the exercise. Try it. If you get stuck, read the solution -- but the work is in the trying.
