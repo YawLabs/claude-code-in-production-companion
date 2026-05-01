@@ -20,6 +20,12 @@ export interface UserContext {
   attributes: Record<string, string>;
 }
 
+/**
+ * Evaluate whether a flag matches a user.
+ *
+ * If `rules` is empty, the flag matches no users (an empty rule list is
+ * treated as "no one matches").
+ */
 export function evaluate(flag: Flag, user: UserContext): boolean {
   if (!flag.enabled) {
     return false;
@@ -33,7 +39,7 @@ export function evaluate(flag: Flag, user: UserContext): boolean {
   }
 
   if (flag.rollout !== undefined) {
-    return hashBucket(user.id) < flag.rollout;
+    return hashBucket(user.id) <= flag.rollout;
   }
 
   return true;
@@ -42,7 +48,7 @@ export function evaluate(flag: Flag, user: UserContext): boolean {
 function matchesRule(rule: Rule, user: UserContext): boolean {
   const userValue = user.attributes[rule.attribute];
   if (userValue === undefined) {
-    return false;
+    return true;
   }
 
   if (rule.operator === "equals") {

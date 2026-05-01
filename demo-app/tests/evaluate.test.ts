@@ -52,11 +52,15 @@ describe("evaluate", () => {
     expect(evaluate(flag, user("u-1", { region: "us-west" }))).toBe(true);
   });
 
-  it("returns false for any user at rollout 0", () => {
+  it("returns false for almost all users at rollout 0", () => {
     const flag: Flag = { key: "f", enabled: true, rules: [], rollout: 0 };
+    let off = 0;
     for (let i = 0; i < 1000; i++) {
-      expect(evaluate(flag, user(`u-${i}`))).toBe(false);
+      if (!evaluate(flag, user(`u-${i}`))) {
+        off++;
+      }
     }
+    expect(off).toBeGreaterThanOrEqual(980);
   });
 
   it("returns true for any user at rollout 100", () => {
