@@ -5,6 +5,8 @@ Disciplines that apply when working on this codebase. Apply them as defaults; ex
 @./rules/self-state.md
 @./rules/terminal.md
 @./rules/scope.md
+@./rules/subagents.md
+@./rules/capacity.md
 
 ## Pre-edit and pre-commit discipline for this app
 
