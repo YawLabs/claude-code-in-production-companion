@@ -101,6 +101,20 @@ echo "[Today's date is $(date +%Y-%m-%d).]"
 
 Register on the `UserPromptSubmit` event. The agent now sees today's date on every turn.
 
+## "biome check fails on JSON / TS files after `git checkout module-N-final`"
+
+Symptom on Windows: you check out a module tag, run `npx biome check` in `demo-app/`, and biome reports "Formatter would have printed the following content" with a diff that looks like every line gained a `\r` (shown as `␍` in biome's output).
+
+Cause: Windows git's default `core.autocrlf=true` converts LF in the index to CRLF in the working tree on checkout. The committed content is LF (clean), but your working copy has CRLF, and biome wants LF.
+
+The repo's `.gitattributes` (added after `module-2-final`) forces LF for code files and prevents this on fresh clones. Tags cut before that fix do not include the file. Workarounds for those tags:
+
+1. **Run lint:fix.** `npm run lint:fix` invokes biome with `--write`, which rewrites the working copy to LF. The committed content does not change.
+2. **Set git config locally.** `git config core.autocrlf input` then `git rm --cached -r .` and `git reset --hard` to re-checkout with LF.
+3. **Re-clone with the right config.** `git clone -c core.autocrlf=input <url>`.
+
+Either way the issue is local-only -- the committed content is correct.
+
 ## Anything else
 
 If you're stuck on something that isn't covered here, the course Discord is the place. If you find an issue with the reference materials themselves, file it on this repo.
