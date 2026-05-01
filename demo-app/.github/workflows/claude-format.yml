@@ -1,0 +1,47 @@
+# Claude format -- fires nightly. Runs npm run lint:fix on main and
+# opens a PR with the resulting changes for human review. The agent
+# does NOT push to main directly -- every change goes through the
+# same review path as a human PR.
+#
+# This workflow is a demonstration of the pattern. Adapt the cron
+# cadence and the action versions to your team's preferences. Set
+# ANTHROPIC_API_KEY as a repository secret.
+
+name: Claude format
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run lint:fix
+        run: npm run lint:fix
+
+      - name: Open PR if changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore: nightly auto-format'
+          title: 'Nightly auto-format'
+          body: |
+            Nightly run of `npm run lint:fix`. Review the changes; if they look right, merge.
+          branch: nightly-format
+          delete-branch: true

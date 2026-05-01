@@ -1,0 +1,34 @@
+# Claude review -- fires on every pull request. The agent runs the
+# team's review skills (/review and /security-review) on the PR diff
+# and posts findings as inline comments.
+#
+# This workflow is a demonstration of the pattern. Adapt the action
+# invocation to the Claude Code GitHub action version your team is
+# using and to your team's specific skill names. Set ANTHROPIC_API_KEY
+# as a repository secret.
+
+name: Claude review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          skills: review,security-review
+          target: pr-diff
