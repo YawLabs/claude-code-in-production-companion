@@ -23,7 +23,9 @@
       "Bash(git rev-parse:*)",
       "Bash(ls:*)",
       "Bash(pwd:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm audit:*)"
     ]
   },
   "hooks": {
