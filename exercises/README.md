@@ -18,6 +18,6 @@ exercises/
     +-- solution.md
 ```
 
-Currently scaffolded -- the per-module exercise and solution files land alongside each `module-N-final` tag.
+Module 1 is populated. Modules 2-4 are still scaffolded -- their files land alongside each `module-N-final` tag as the module is finalized.
 
 Open the exercise. Try it. If you get stuck, read the solution -- but the work is in the trying.
