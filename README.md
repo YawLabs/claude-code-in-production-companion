@@ -30,18 +30,22 @@ What this repo is not:
 The `main` branch holds this documentation and the tag definitions. The actual overlay (and the small demo codebase it sits on top of) lives at the tags below. `git checkout <tag>` to land on that module's final state.
 
 ```
-main                 (this README + STRUCTURE.md + SETUP.md + TROUBLESHOOTING.md)
-+-- module-1-final   (the minimum overlay -- one CLAUDE.md, basic settings.json)
-+-- module-2-final   (the expanding contract -- rule-layering, skills, memory)
-+-- module-3-final   (reliability -- hooks, subagents, /loop and /schedule)
-+-- module-4-final   (team posture -- shared rules, CI integration, observability)
+main                            (docs, exercises, lectures, .gitattributes, LICENSE)
++-- module-{1..4}-start         (per-module exercise starting state)
++-- module-{1..4}-final         (per-module canonical end state)
+    +-- module-1-final          (the minimum overlay -- one CLAUDE.md, one skill)
+    +-- module-2-final          (the expanding contract -- rule-layering, two more skills, memory)
+    +-- module-3-final          (reliability -- hooks, subagents, /loop and /schedule)
+    +-- module-4-final          (team posture -- shared/personal split, CI integration)
 ```
+
+The start and final tags bracket each module's exercise. `module-N-start` is the state you check out before doing module N's exercise; `module-N-final` is the canonical answer. `module-N-start` for N > 1 is the same commit as `module-(N-1)-final`.
 
 ### Tag contents at a glance
 
 **`module-1-final`** -- the minimum useful overlay. One project `CLAUDE.md` with three or four standing rules, a `settings.json` that pins model and effort tier and includes a starter permission allowlist, and a single skill that does something concrete. Demonstrates the smallest setup that earns its keep.
 
-**`module-2-final`** -- the rule-layering pattern from Chapter 2 of the book. The single CLAUDE.md gets split into a manifest plus discipline-specific rule files. Three skills are added (a code review, a ship-readiness audit, a status inspection). The memory store gets its first few entries with `MEMORY.md` as the index. The permission allowlist is tuned with a `fewer-permission-prompts` pass.
+**`module-2-final`** -- the rule-layering pattern from Chapter 2 of the book. The single CLAUDE.md gets split into a manifest plus discipline-specific rule files. Two more skills land (a ship-readiness audit and a status inspection), bringing the total to three. The memory store gets its first three entries with `MEMORY.md` as the index. The permission allowlist is tuned via a `fewer-permission-prompts` pass and grows from 11 to 21 entries.
 
 **`module-3-final`** -- reliability and verification. Adds hooks (a pre-commit lint hook on `PostToolUse`, a `Stop`-event notifier). Introduces subagent invocation patterns -- briefing prompts that work, the trust-but-verify spot-check discipline. Adds a `/loop` for a recurring task and a `/schedule` for a true background routine. The trust-boundary discipline from Chapter 8 is the through-line.
 
