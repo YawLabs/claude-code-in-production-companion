@@ -24,7 +24,7 @@ Three new mechanics, all small. None of them complicated. The shape they produce
 
 The single `CLAUDE.md` from module 1 had four rules. They were grouped by section heading, but the file was one flat document.
 
-In module 2 you split it. The new `CLAUDE.md` is short -- a manifest. The disciplines live in separate files under `rules/`, one rule per file. The manifest pulls them in via `@` includes:
+In module 2 you split it. The new `CLAUDE.md` starts using `@`-includes -- the disciplines live in separate files under `rules/`, one rule per file, and the manifest pulls them in. A project-specific section stays inline for now; module 4 promotes it to its own rule file.
 
 ```
 @./rules/self-state.md

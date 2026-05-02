@@ -6,12 +6,15 @@ Note: the commands below assume you have checked out a module tag (`module-1-fin
 
 ## Prerequisites
 
+* **A GitHub account.** Course access is granted via GitHub collaborator invitation after purchase. Accept the invite from your account before running the clone command below.
 * **Claude Code installed.** The course assumes a working Claude Code installation. If you are on the Anthropic-managed CLI, you are good. If you are on a custom build, the rule and skill paths in the reference may sit in a slightly different place; the SETUP notes per module call out the differences.
 * **Node.js 20 or later.** The demo app is a small TypeScript project; the build assumes a modern Node.
 * **Git.** You will be checking out tags and producing diffs.
 * **A terminal you trust to run agentic sessions.** If your terminal mangles Unicode (Windows ConPTY is the most common offender), Chapter 10 of the book covers the ASCII-discipline workaround. The course examples already use ASCII-safe output everywhere terminal output appears.
 
 ## Clone and check out a module
+
+The repo is private course material. Once you have accepted the GitHub collaborator invitation that arrives after purchase, the clone command behaves like any other repo you can read:
 
 ```bash
 git clone https://github.com/YawLabs/production-claude-code

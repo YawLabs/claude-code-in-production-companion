@@ -45,11 +45,21 @@ The start and final tags bracket each module's exercise. `module-N-start` is the
 
 **`module-1-final`** -- the minimum useful overlay. One project `CLAUDE.md` with three or four standing rules, a `settings.json` that pins model and effort tier and includes a starter permission allowlist, and a single skill that does something concrete. Demonstrates the smallest setup that earns its keep.
 
-**`module-2-final`** -- the rule-layering pattern from Chapter 2 of the book. The single CLAUDE.md gets split into a manifest plus discipline-specific rule files. Two more skills land (a ship-readiness audit and a status inspection), bringing the total to three. The memory store gets its first three entries with `MEMORY.md` as the index. The permission allowlist is tuned via a `fewer-permission-prompts` pass and grows from 11 to 21 entries.
+**`module-2-final`** -- the rule-layering pattern from Chapter 2 of the book. The single CLAUDE.md starts using `@`-includes -- the disciplines move into separate files under `rules/` and the manifest pulls them in; a project-specific section stays inline until module 4 promotes it. Two more skills land (a ship-readiness audit and a status inspection), bringing the total to three. The memory store gets its first three entries with `MEMORY.md` as the index. The permission allowlist is tuned via a `fewer-permission-prompts` pass and grows from 11 to 21 entries.
 
 **`module-3-final`** -- reliability and verification. Adds hooks (a pre-commit lint hook on `PostToolUse`, a `Stop`-event notifier). Introduces subagent invocation patterns -- briefing prompts that work, the trust-but-verify spot-check discipline. Adds a `/loop` for a recurring task and a `/schedule` for a true background routine. The trust-boundary discipline from Chapter 8 is the through-line.
 
 **`module-4-final`** -- team posture. The project `CLAUDE.md` becomes a team contract; the `settings.json` gets pinned defaults; `settings.local.json` is documented as the personal-overrides location. A pre-commit checklist is encoded. CI integration patterns are demonstrated (agent-as-reviewer on PRs; agent-as-formatter for routine fixes). The course finishes with a setup that's safe for a team to share.
+
+## Access
+
+This repo is private course material. Access is granted via GitHub collaborator invitation after purchase:
+
+1. Buy the course at https://yaw.sh/courses/production-claude-code
+2. You receive an automated email with a GitHub collaborator invitation to this repo.
+3. Accept the invitation. From then on, the repo behaves like any other GitHub repo you can read -- clone, fetch, check out tags.
+
+If the invite does not arrive within a few minutes, file an issue or reach out via the course page.
 
 ## How to use it
 
