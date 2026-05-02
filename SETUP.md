@@ -81,4 +81,4 @@ See `TROUBLESHOOTING.md` for the issues that come up most often. The short list:
 
 ## Getting help
 
-If you're stuck after reading TROUBLESHOOTING and diffing against the reference, check the course Discord. If the issue is with the reference materials themselves, file an issue on this repo. If the course content is unclear, email me directly: jeff@yaw.sh.
+If you're stuck after reading TROUBLESHOOTING and diffing against the reference, check the course Discord. If the issue is with the reference materials themselves, file an issue on this repo.

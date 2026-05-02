@@ -14,7 +14,7 @@ This repo is the canonical reference for the Production Claude Code course. Most
 
 **"This isn't how I'd build it."** Probably true. The reference is shaped to teach the concepts each module covers, not to be the most elegant possible setup. There are deliberate simplifications. If you have a better pattern, that's content for your own setup; the reference stays the way the course teaches.
 
-**Course content feedback.** Email me directly: jeff@yaw.sh. The course materials live elsewhere and feedback there is more efficient than via GitHub issues.
+**Course content feedback.** The course materials live elsewhere; feedback through the course platform reaches us faster than GitHub issues.
 
 **Bugs in Claude Code itself.** Those go to Anthropic, not here. If a Claude Code feature behaves differently than this repo expects, the reference materials are probably the side that needs to update.
 

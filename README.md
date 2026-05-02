@@ -1,6 +1,6 @@
 # @yawlabs/production-claude-code
 
-Reference materials for the **Production Claude Code** course by Jefferson Hale.
+Reference materials for the **Production Claude Code** course by Yaw Labs.
 
 This repo holds the canonical end-of-module checkpoints for the overlay you build during the course. Each module's final state is preserved as a git tag so you can clone the repo, check out the tag for whichever module you are working on, and compare it against your own work.
 
@@ -73,16 +73,15 @@ MIT. See `LICENSE`.
 
 You are free to use, modify, and adapt this overlay. If you take the patterns and apply them to your own team's setup, that is the goal -- ship something good.
 
-## Author
+## About
 
-Jefferson Hale (Yaw Labs).
+Yaw Labs.
 
 - Course: https://yaw.sh/courses/production-claude-code
 - Book: https://github.com/YawLabs/claude-code-in-production
-- Email: jeff@yaw.sh
 - Issues: file them on this repo for problems with the reference materials.
 
-If the course itself is the issue (a module is unclear, a video is broken, a script does not match the materials), email me directly and I will fix it.
+If the course itself is the issue (a module is unclear, a video is broken, a script does not match the materials), file an issue on this repo and we'll fix it.
 
 ## Repository layout
 
