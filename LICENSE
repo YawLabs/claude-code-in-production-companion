@@ -1,21 +1,120 @@
-MIT License
+Yaw Labs Course Materials -- End User License Agreement
+Last updated: 2026-05-02
 
-Copyright (c) 2026 Yaw Labs
+1. The agreement
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This End User License Agreement ("Agreement") is between Yaw Labs ("Yaw Labs",
+"we", "us") and the individual or entity ("you", "Licensee") who has purchased
+access to the Yaw Labs course materials ("Course Materials"). By accessing the
+Course Materials -- whether through a GitHub collaborator invitation, a
+download link, or any other mechanism -- you accept this Agreement.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. License grant
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Subject to the terms below, Yaw Labs grants you a non-exclusive,
+non-transferable, revocable, single-user license to:
+
+  (a) Access, view, and study the Course Materials for your own personal
+      learning.
+
+  (b) Apply the techniques, patterns, and disciplines demonstrated in the
+      Course Materials to your own work, including commercial work that you
+      ship under your own name.
+
+  (c) Quote brief excerpts of the Course Materials in your own writing, talks,
+      or commentary, with the source clearly attributed to Yaw Labs and the
+      excerpt no longer than is necessary to make a point.
+
+3. Restrictions
+
+You may not:
+
+  (a) Redistribute, mirror, repost, or share the Course Materials -- in whole
+      or in substantial part -- with anyone who has not separately purchased
+      access. This applies to public posting (GitHub, websites, social media,
+      video platforms, file shares) and private sharing (sending materials to a
+      colleague, family member, or friend).
+
+  (b) Share your access credentials or your GitHub account's access to the
+      course repository. Each license is for one human licensee.
+
+  (c) Sell, sublicense, rent, or otherwise transfer your license to a third
+      party.
+
+  (d) Remove or alter copyright notices, attribution lines, or this Agreement.
+
+  (e) Use the Course Materials to train any model, AI system, or automated
+      tool that reproduces or substantially imitates the Course Materials'
+      content.
+
+  (f) Use the Course Materials to create a competing course, book, or training
+      product.
+
+4. Reservation of rights
+
+Yaw Labs retains all right, title, and interest in the Course Materials,
+including all intellectual property rights. This Agreement does not transfer
+any ownership rights to you.
+
+5. Term and termination
+
+This Agreement begins when you first access the Course Materials and continues
+until terminated. It terminates automatically if:
+
+  (a) You materially breach this Agreement.
+
+  (b) You receive a refund or chargeback for your purchase.
+
+  (c) Yaw Labs discontinues the course.
+
+Upon termination, Yaw Labs may revoke your access (including removing you as a
+GitHub collaborator) and you must cease use of the Course Materials and
+destroy any local copies. Sections 4, 6, 7, 8, 9, and 10 survive termination.
+
+6. Updates
+
+Yaw Labs may update the Course Materials from time to time. Updates are
+provided to active licensees at no additional cost via the same access
+channel. Yaw Labs is not obligated to provide updates and may discontinue them
+at any time.
+
+7. No warranty
+
+THE COURSE MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+Yaw Labs does not warrant that the Course Materials will be error-free, that
+the techniques shown will be appropriate for any specific situation, or that
+the Course Materials will remain compatible with future versions of any
+third-party software referenced.
+
+8. Limitation of liability
+
+IN NO EVENT SHALL YAW LABS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM
+OR IN CONNECTION WITH THE COURSE MATERIALS OR THIS AGREEMENT, INCLUDING
+WITHOUT LIMITATION ANY LOSS OF DATA, LOSS OF PROFITS, OR INTERRUPTION OF
+BUSINESS.
+
+9. Governing law
+
+This Agreement is governed by the laws of the State of Delaware, USA, without
+regard to its conflict-of-laws principles. Any dispute arising from this
+Agreement shall be resolved in the state and federal courts located in
+Delaware, and the parties consent to the personal jurisdiction of those
+courts.
+
+10. Entire agreement
+
+This Agreement is the entire agreement between you and Yaw Labs regarding the
+Course Materials and supersedes any prior agreements. If any provision of
+this Agreement is found unenforceable, the remaining provisions remain in
+effect.
+
+11. Contact
+
+For questions about this Agreement, file an issue on the course repository.
+
+
+Copyright (c) 2026 Yaw Labs. All rights reserved.

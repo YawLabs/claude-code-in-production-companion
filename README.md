@@ -79,9 +79,9 @@ That diff is the shape of module 2.
 
 ## License
 
-MIT. See `LICENSE`.
+Yaw Labs Course Materials -- End User License Agreement. See `LICENSE`.
 
-You are free to use, modify, and adapt this overlay. If you take the patterns and apply them to your own team's setup, that is the goal -- ship something good.
+This is paid course material licensed for personal use by the purchasing licensee. You may apply the techniques and patterns to your own work, including commercial work you ship under your own name. You may not redistribute, mirror, or share the materials with anyone who has not separately purchased access. The full terms are in `LICENSE`.
 
 ## About
 
