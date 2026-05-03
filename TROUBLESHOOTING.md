@@ -1,10 +1,10 @@
 # Troubleshooting
 
-Common issues that come up while working through the course, in roughly the order you'll hit them.
+Common issues that come up while working through the book's Try-this exercises, in roughly the order you'll hit them.
 
 ## "Claude Code doesn't seem to be loading the project's CLAUDE.md"
 
-You started the session in the wrong directory. Claude Code reads `CLAUDE.md` (or `.claude/CLAUDE.md`, depending on your harness version) from the working directory the session was launched in. If you launched from `/home/you` and the project is in `/home/you/production-claude-code`, the project file isn't loaded.
+You started the session in the wrong directory. Claude Code reads `CLAUDE.md` (or `.claude/CLAUDE.md`, depending on your harness version) from the working directory the session was launched in. If you launched from `/home/you` and the project is in `/home/you/claude-code-in-production-companion`, the project file isn't loaded.
 
 Fix: `cd` into the project directory and start the session there. Verify by asking Claude Code "what rules are loaded for this project" -- if the project rules aren't visible, the working directory is wrong.
 
@@ -80,18 +80,18 @@ Two possible causes:
 1. **The index entry is too generic.** The agent decides whether to fetch a memory body based on the index entry's match against the current conversation. An entry like "Notes on database access" is generic; an entry like "Skip @yawlabs/foo-mcp -- here's the test" is specific and will fire when the test phrase comes up.
 2. **The body falls out of context after fetch.** A memory you wrote earlier in the session has a body that's no longer in active context; only the index entry is. If the topic resurfaces, re-read the file -- don't trust "I remember what I wrote" (Chapter 6 covers this).
 
-## "The course module exercises don't match the reference at the tag"
+## "The chapter Try-this result doesn't match the reference at the tag"
 
-If you're following a module's exercise document and the result doesn't match the reference at `module-N-final`, two possibilities:
+If you're following a chapter's Try-this section and the result doesn't match the reference at `module-N-final`, two possibilities:
 
-1. **You diverged in module N-1.** Your starting point isn't what the exercise expected. Diff your current state against `module-(N-1)-final` and reconcile.
-2. **The course materials drifted from the reference.** Less likely but possible if the reference has been updated. File an issue on this repo with what you expected vs what you got.
+1. **You diverged in an earlier exercise.** Your starting point isn't what the exercise expected. Diff your current state against `module-(N-1)-final` and reconcile.
+2. **The book drifted from the reference.** Less likely but possible if the reference has been updated. File an issue on this repo with what you expected vs what you got.
 
 ## "Claude Code thinks today is the wrong date"
 
 The agent's training cutoff is in the past. If today's date matters (you're cutting a release, you're checking a deadline), the agent may default to the cutoff date instead of today's date.
 
-Fix: a `UserPromptSubmit` hook that injects today's date at the start of every prompt. The course's module 3 covers the pattern. The short version:
+Fix: a `UserPromptSubmit` hook that injects today's date at the start of every prompt. The book's `module-3-final` covers the pattern. The short version:
 
 ```bash
 #!/usr/bin/env bash
@@ -101,6 +101,20 @@ echo "[Today's date is $(date +%Y-%m-%d).]"
 
 Register on the `UserPromptSubmit` event. The agent now sees today's date on every turn.
 
+## "biome check fails on JSON / TS files after `git checkout module-N-final`"
+
+Symptom on Windows: you check out a module tag, run `npx biome check` in `demo-app/`, and biome reports "Formatter would have printed the following content" with a diff that looks like every line gained a `\r` (shown as `␍` in biome's output).
+
+Cause: Windows git's default `core.autocrlf=true` converts LF in the index to CRLF in the working tree on checkout. The committed content is LF (clean), but your working copy has CRLF, and biome wants LF.
+
+The repo's `.gitattributes` (added after `module-2-final`) forces LF for code files and prevents this on fresh clones. Tags cut before that fix do not include the file. Workarounds for those tags:
+
+1. **Run lint:fix.** `npm run lint:fix` invokes biome with `--write`, which rewrites the working copy to LF. The committed content does not change.
+2. **Set git config locally.** `git config core.autocrlf input` then `git rm --cached -r .` and `git reset --hard` to re-checkout with LF.
+3. **Re-clone with the right config.** `git clone -c core.autocrlf=input <url>`.
+
+Either way the issue is local-only -- the committed content is correct.
+
 ## Anything else
 
-If you're stuck on something that isn't covered here, the course Discord is the place. If you find an issue with the reference materials themselves, file it on this repo.
+If you're stuck on something that isn't covered here, file an issue on this repo. If you find an issue with the reference materials themselves, this is also where it goes.

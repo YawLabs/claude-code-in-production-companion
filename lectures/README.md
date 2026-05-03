@@ -1,6 +1,6 @@
-# Lectures
+# Walk-throughs
 
-Lecture scripts for the four modules. Each script is a complete walkthrough of the module's content -- the version I read from when recording the video.
+Long-form walk-throughs that complement the book chapters. Each one is a complete, prose-shaped pass over the material a single module covers, written so you can read it standalone if you prefer reading to working through the chapter exercises.
 
 ```
 lectures/
@@ -10,8 +10,8 @@ lectures/
 +-- module-4-team-posture.md
 ```
 
-Currently scaffolded -- the per-module scripts land as the videos are recorded.
+Currently scaffolded at this tag -- the per-module walk-throughs live on `main`.
 
-The scripts include cues for the recording (when to switch to the screen capture, when to pause for emphasis, where the segments break for the video editor) but read fine as standalone documents if you prefer prose to video.
+The directory is named `lectures/` because the matching `module-N-final` git tags use the `module-N` label. The contents are book-companion prose, not lecture scripts.
 
-If you spot a script that doesn't match the corresponding video or the matching module's reference code, file an issue.
+If you spot a walk-through that doesn't match the corresponding book chapter or the matching `module-N-final` reference code, file an issue.
