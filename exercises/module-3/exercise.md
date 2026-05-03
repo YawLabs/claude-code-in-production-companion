@@ -1,5 +1,7 @@
 # Module 3 -- Reliability and Verification
 
+[module-3] companion exercise. Pairs with chapters 5, 7, and 8 of *Claude Code in Production*.
+
 ## Goal
 
 Add the reliability primitives to your overlay. By the end you will have:

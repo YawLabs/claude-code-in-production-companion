@@ -1,5 +1,7 @@
 # Module 3 -- Solution walk-through
 
+[module-3] companion solution. Pairs with chapters 5, 7, and 8 of *Claude Code in Production*.
+
 One canonical answer for module 3. The canonical content lives at `module-3-final`; this doc is the *reasoning*.
 
 ## subagents.md and capacity.md
@@ -47,7 +49,7 @@ The two hooks together are the two shapes of hook a real overlay typically wants
 
 ## The +x bit issue
 
-On Windows git's default config, `chmod +x` does not propagate to the git index because `core.fileMode` is off. You commit files as `100644` (non-executable) and Linux/Mac course-takers get scripts that fail to run.
+On Windows git's default config, `chmod +x` does not propagate to the git index because `core.fileMode` is off. You commit files as `100644` (non-executable) and Linux/Mac readers get scripts that fail to run.
 
 Fix: `git update-index --chmod=+x <files>`. This sets the mode in the index regardless of platform.
 

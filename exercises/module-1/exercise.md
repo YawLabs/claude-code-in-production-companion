@@ -1,5 +1,7 @@
 # Module 1 -- Build the minimum useful overlay
 
+[module-1] companion exercise. Pairs with chapters 2-3 of *Claude Code in Production*.
+
 ## Goal
 
 Build a Claude Code overlay for the small TypeScript demo at `demo-app/`. By the end you will have:

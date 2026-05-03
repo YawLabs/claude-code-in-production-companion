@@ -1,5 +1,7 @@
 # Module 2 -- The Expanding Contract
 
+[module-2] companion exercise. Pairs with chapters 4-6 of *Claude Code in Production*.
+
 ## Goal
 
 Take the minimum overlay you built in module 1 and expand it. By the end you will have:

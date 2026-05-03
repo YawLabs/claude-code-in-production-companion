@@ -1,8 +1,6 @@
 # Module 3 -- Reliability and Verification
 
-[OPEN: title card; cut to desk]
-
-Welcome to module 3.
+[module-3] companion walk-through. Pairs with chapters 5, 7, and 8 of *Claude Code in Production*.
 
 In module 1 you closed the loop -- a real session, a real overlay, a real demo. In module 2 you expanded the loop -- rule layering, two more skills, memory, allowlist tuning.
 
@@ -12,11 +10,7 @@ You have hooks now -- code that runs automatically on session events, without yo
 
 That is the shift. Modules 1 and 2 kept you in every loop. Module 3 lets you step out.
 
-[BEAT]
-
 ## Two new rules
-
-[CAPTURE: rules/subagents.md and rules/capacity.md]
 
 Two rule files land in module 3 because the disciplines they encode are easy to forget under pressure.
 
@@ -26,11 +20,7 @@ This is the most-violated discipline when working with subagents. Without it wri
 
 `capacity.md` -- capacity decisions belong to the user. After an Anthropic-side throttle fires, the harness or the user typically drops to a sub-flagship tier. The agent's instinct (per "default to flagship") is to suggest switching back. The capacity rule overrides: the user picked the lower tier for a reason. Do not second-guess.
 
-[SEGMENT BREAK]
-
 ## Hooks -- two shapes
-
-[CAPTURE: hooks/pre-commit-lint.sh, then hooks/stop-notify.sh]
 
 Hooks are shell commands that fire on session events. Two shapes land in module 3:
 
@@ -38,27 +28,19 @@ Hooks are shell commands that fire on session events. Two shapes land in module 
 
 `stop-notify.sh` fires on `Stop` -- when the session finishes a response and is waiting for input. The hook rings the terminal bell and writes a marker to stderr. Cross-platform (works on macOS, Linux, Windows Git Bash).
 
-[CAPTURE: settings.json hooks block]
-
 Both are registered in `settings.json` under a `hooks` block. PostToolUse hooks need a matcher (a regex against the tool name). Stop hooks do not -- there is no tool name to match.
-
-[BEAT]
 
 ## The +x bit -- the platform footgun
 
-[CAPTURE: git ls-tree showing 100644 vs 100755]
-
-On Windows git's default config, `chmod +x` does not propagate to the git index because `core.fileMode` is off. You commit files as `100644` (non-executable) and Linux/Mac course-takers get scripts that fail to run silently.
+On Windows git's default config, `chmod +x` does not propagate to the git index because `core.fileMode` is off. You commit files as `100644` (non-executable) and Linux/Mac readers get scripts that fail to run silently.
 
 The fix is `git update-index --chmod=+x <files>`. This sets the executable mode in the index regardless of which platform you are on.
 
-I tripped on this myself building this very module. The first commit captured the hooks as `100644`. Verification (`git ls-tree`) caught it; a quick `update-index --chmod=+x` and a follow-up commit fixed it.
+This bit tripped the canonical answer during build. The first commit captured the hooks as `100644`. Verification (`git ls-tree`) caught it; a quick `update-index --chmod=+x` and a follow-up commit fixed it.
 
 The lesson: when you commit shell scripts, verify the +x bit. `git ls-tree HEAD -- <path>` shows the mode.
 
 ## Subagent invocation practice
-
-[CAPTURE: dispatching an Explore agent, then a Plan agent, then a full-pass agent]
 
 Three subagent shapes you will use most often:
 
@@ -70,19 +52,13 @@ Three subagent shapes you will use most often:
 
 Each returns a report. The discipline is the same -- pick three claims at random, verify by hand. The exercise has you dispatch all three at least once because the spot-check needs to become muscle memory, not a thing you remember to do.
 
-[SEGMENT BREAK]
-
 ## /loop and /schedule
-
-[CAPTURE: terminal showing /loop 5m /weekly-deps-audit]
 
 `/loop` is for in-session repeated work. "Check the build every 5 minutes during this debug session." The agent fires the same task on a fixed interval until you stop it.
 
 `/schedule` is for true background routines. The agent is not in your session at all -- a remote runner fires the task on a cron schedule. The classic example is a weekly dependency audit -- catches drift before the work week starts.
 
 The `weekly-deps-audit` skill is the target of module 3's `/schedule` example. It runs `npm outdated --json` and `npm audit --json`, groups findings (security advisories first, then major drift, then patch/minor), and reports without auto-upgrading. The audit reports; the user upgrades.
-
-[BEAT]
 
 A note on `/loop` cadence. Claude's prompt cache TTL is five minutes. A `/loop` interval under 5 minutes keeps the cache warm; an interval over pays a cache-miss cost per iteration. Default to 270 seconds (just under the TTL) for active monitoring, or 1200+ seconds (commit to the cache miss) for idle checks. Anything in between -- five-minute round numbers -- is the worst-of-both: you pay the cache miss without amortizing it.
 
@@ -117,8 +93,6 @@ By the end of module 3:
 
 ## What module 4 builds on top
 
-[CAPTURE: STRUCTURE.md showing module-4-final layout]
-
 Module 4 is team posture. The `CLAUDE.md` becomes a team contract; the `settings.json` gets pinned defaults that survive the team; `settings.local.json` carries personal overrides outside version control. A pre-commit checklist is encoded as discipline. CI integration lands -- a workflow that runs `/review` and `/security-review` on pull requests, another that runs nightly auto-fixes. `CONTRIBUTING.md` becomes the new-teammate onboarding doc.
 
 Module 4 is where the overlay stops being yours and starts being the team's.
@@ -129,4 +103,4 @@ The exercise for module 3 is in `exercises/module-3/exercise.md`. Check out `mod
 
 Hooks. Subagents. Loop. Schedule. The loop runs unattended. That is module 3.
 
-Module 4, next.
+Module 4 is next.

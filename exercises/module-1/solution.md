@@ -1,5 +1,7 @@
 # Module 1 -- Solution walk-through
 
+[module-1] companion solution. Pairs with chapters 2-3 of *Claude Code in Production*.
+
 One canonical answer for the module-1 exercise. Many shapes work; this is the one shipped at `module-1-final`. The point of this doc is the *reasoning*, not the content -- the content is in the tag.
 
 ## The four bugs in the demo

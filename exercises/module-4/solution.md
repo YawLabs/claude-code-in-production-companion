@@ -1,5 +1,7 @@
 # Module 4 -- Solution walk-through
 
+[module-4] companion solution. Pairs with chapters 6 and 11 of *Claude Code in Production*.
+
 One canonical answer for module 4. The canonical content lives at `module-4-final`; this doc is the *reasoning*.
 
 ## The shared/personal split is the central move
@@ -22,7 +24,7 @@ The three module-2 memory entries all pass the team test:
 
 All three move to `memory/shared/`.
 
-`memory/personal/` is gitignored at the repo root. Course-takers create entries there as needed; they never appear in checked-in state. The promotion path is: write a personal entry, see it earn its keep across sessions, promote to `shared/` so the team gets the benefit.
+`memory/personal/` is gitignored at the repo root. Readers create entries there as needed; they never appear in checked-in state. The promotion path is: write a personal entry, see it earn its keep across sessions, promote to `shared/` so the team gets the benefit.
 
 `MEMORY.md` is reorganized with two section headers (Shared / Personal) so the index makes the split obvious.
 
@@ -65,7 +67,7 @@ Two common personal overrides shown:
 - `effortLevel: max` -- a developer who has seen `xhigh` fall short on a specific work shape can bump to `max` locally without changing the team default.
 - `Bash(npm install:*)`, `Bash(npm run start:*)` -- state-mutating commands the team baseline deliberately keeps un-allowlisted. A developer who runs `npm install` constantly during dependency work might add it locally; the team default stays cautious.
 
-The example is intentionally short -- two overrides cover the most common cases. Course-takers add more as their workflow demands.
+The example is intentionally short -- two overrides cover the most common cases. Readers add more as their workflow demands.
 
 ## CONTRIBUTING.md
 
@@ -113,4 +115,4 @@ Compare against your work. Differences you should expect:
 
 If a new teammate can clone, set up, and work productively from `CONTRIBUTING.md` alone -- without needing to read the rest of the docs -- the overlay works. You have shipped a team-shareable Claude Code overlay.
 
-The course is over. Go build.
+The companion progression is done. Go build.

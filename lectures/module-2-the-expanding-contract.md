@@ -1,8 +1,6 @@
 # Module 2 -- The Expanding Contract
 
-[OPEN: title card; cut to desk]
-
-Welcome to module 2.
+[module-2] companion walk-through. Pairs with chapters 4-6 of *Claude Code in Production*.
 
 In module 1 you built the minimum useful overlay -- one `CLAUDE.md`, one `settings.json`, one skill. That overlay closed a real loop: a session in `demo-app/`, a `review-changes` skill, four bugs caught.
 
@@ -16,11 +14,7 @@ This module is the pattern for handling that growth. Rule layering. Memory. Allo
 
 Three new mechanics, all small. None of them complicated. The shape they produce is the shape of an overlay that earns its keep daily.
 
-[BEAT]
-
 ## Rule layering
-
-[CAPTURE: scroll through module-1 CLAUDE.md, then module-2 CLAUDE.md and the rules/ directory]
 
 The single `CLAUDE.md` from module 1 had four rules. They were grouped by section heading, but the file was one flat document.
 
@@ -40,19 +34,13 @@ Two: rules of different shape stop drifting into each other. A "verify state" ru
 
 Three: project-specific rules and general rules live in different places. The general disciplines are the rule files -- they would apply to any project. Project-specific rules stay inline in `CLAUDE.md`. That split makes the general rules portable -- you can copy `rules/` into a new project's `.claude/` directly without dragging the project-specific stuff with them.
 
-[SEGMENT BREAK]
-
 ## Two new skills
 
 Module 1 had one skill. Module 2 adds two -- `ship-ready` and `status`. Both follow the same pattern as `review-changes`: a frontmatter description that is the trigger, a body that is the instructions, a "what not to do" section that prevents over-reach.
 
-[CAPTURE: ship-ready/SKILL.md frontmatter]
-
 `ship-ready` audits a branch for shippability. The trigger phrases -- "is this ready to ship?", "audit this for release", "is this branch shippable?" -- are the things you actually type when you want this work done. The body checklist covers the categories that turn out to matter at ship time: golden path, error UI, loading states, empty states, destructive confirmations, hygiene. The output shape groups blocked-first so the gating items land at the top of the report.
 
 The "what not to do" line is "do not run the full test suite as part of this audit." That is there because without it, the agent helpfully runs `npm test` and the audit takes ten times longer for no reason. Correctness on tested paths is `npm test`'s job. `ship-ready` is for the things tests do not catch.
-
-[CAPTURE: status/SKILL.md]
 
 `status` is one-shot session introspection. The trigger is `/status`, "what mode am I in?", "what model am I running?", "is the overlay active?". The body reports model, effort, overlay path, mode -- all verbatim, none inferred from skill names or surface signals.
 
@@ -60,11 +48,7 @@ The discipline encoded in this skill is "verify, do not guess." Reading skill na
 
 The "do not refuse to report because verification is incomplete" line is in there because of a real session where the agent refused to answer about model state because one signal was missing. The user wanted the partial answer; they got a refusal. The skill says: partial truth is more useful than refusal.
 
-[SEGMENT BREAK]
-
 ## Memory
-
-[CAPTURE: memory/ directory, then MEMORY.md]
 
 In module 1 the agent forgot everything between sessions. Module 2 introduces the memory store.
 
@@ -72,25 +56,17 @@ The pattern: a `MEMORY.md` file at `.claude/memory/MEMORY.md` is always loaded i
 
 Three first entries land in module 2.
 
-[CAPTURE: project_demo_bugs.md]
-
-One `project` entry captures the demo's intentional bugs. Without this, every session that touches `evaluate.ts` "discovers" the bugs as if they were unknown problems and helpfully proposes fixes. The entry says: these are course content, do not fix unprompted.
-
-[CAPTURE: feedback_skill_description_voice.md]
+One `project` entry captures the demo's intentional bugs. Without this, every session that touches `evaluate.ts` "discovers" the bugs as if they were unknown problems and helpfully proposes fixes. The entry says: these are companion-repo content, do not fix unprompted.
 
 Two `feedback` entries capture lessons. One: skill descriptions are triggers, not docs -- write them in the language users actually type. Two: allowlists tighten in response to real prompts seen, not preemptively.
 
 The split between `project` and `feedback` types is intentional. `feedback` entries are portable -- they apply to any project. `project` entries are local -- they only matter for this codebase. When you copy your `rules/` into a new project's `.claude/`, you copy the `feedback` memories too. The `project` memories stay behind.
-
-[BEAT]
 
 The agent decides whether to fetch a memory body based on the index entry's match against the current conversation. So the index entries matter. Generic ("notes on database access") will rarely fire. Specific ("skip @yawlabs/foo-mcp -- here is the workaround") will fire when the workaround topic comes up.
 
 The discipline that earns memory its keep: when something surprising happens or a hard-won lesson lands, write it down. Future-you will not remember.
 
 ## Allowlist tuning
-
-[CAPTURE: settings.json from module 1, then module 2]
 
 Module 1's allowlist had 11 entries. Module 2's has 21. The ten additions are not preemptive -- they reflect ten commands that real sessions on this codebase actually surfaced as repeat prompts.
 
@@ -99,8 +75,6 @@ The principle: start narrow, grow in response to prompts, never preemptively. Re
 The mechanism: a `fewer-permission-prompts` skill scans recent prompts you have hit and proposes additions. You review the proposed list, decide which ones to keep, and the skill writes them to `settings.json`. The interactive form is much faster than tuning by hand.
 
 The `feedback_allowlist_tuning.md` memory is the lesson learned: preemptive allowlisting is guessing. You either over-include (expand the trust surface) or under-include (still get prompted on the commands you actually use). The allowlist is tuned by usage, not by anticipation.
-
-[SEGMENT BREAK]
 
 ## What you build, what you skip
 
@@ -142,4 +116,4 @@ The exercise for module 2 is in `exercises/module-2/exercise.md`. Check out `mod
 
 Five mechanics. One closed loop, expanded. That is module 2.
 
-Module 3, next.
+Module 3 is next.

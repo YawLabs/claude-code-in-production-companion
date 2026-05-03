@@ -1,5 +1,7 @@
 # Module 4 -- Team Posture
 
+[module-4] companion exercise. Pairs with chapters 6 and 11 of *Claude Code in Production*.
+
 ## Goal
 
 Take the overlay you built across modules 1-3 and reshape it as a team contract. By the end you will have:

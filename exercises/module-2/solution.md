@@ -1,5 +1,7 @@
 # Module 2 -- Solution walk-through
 
+[module-2] companion solution. Pairs with chapters 4-6 of *Claude Code in Production*.
+
 One canonical answer for the module-2 exercise. The canonical content lives at `module-2-final`; this doc is the *reasoning* behind the choices.
 
 ## Why rule layering matters
@@ -45,7 +47,7 @@ The canonical body has one specific anti-pattern: "do not refuse to report state
 
 Three entries land in module 2. Each is a separate file under `memory/`, with `MEMORY.md` as the always-loaded index.
 
-- **`project_demo_bugs.md`** captures the four intentional bugs in the demo. Without this entry, every fresh session would "discover" them as if they were unknown problems and propose fixes. The entry says: these are course content, do not fix unprompted.
+- **`project_demo_bugs.md`** captures the four intentional bugs in the demo. Without this entry, every fresh session would "discover" them as if they were unknown problems and propose fixes. The entry says: these are companion-repo content, do not fix unprompted.
 - **`feedback_skill_description_voice.md`** captures the lesson that skill descriptions are triggers, not documentation. Lead with the verbatim phrasings users actually say.
 - **`feedback_allowlist_tuning.md`** captures the lesson that allowlists grow in response to real prompts seen, not preemptively.
 

@@ -1,20 +1,14 @@
 # Module 1 -- The Minimum Useful Overlay
 
-[OPEN: title card; cut to desk]
-
-Welcome to module 1 of Production Claude Code.
+[module-1] companion walk-through. Pairs with chapters 2-3 of *Claude Code in Production*.
 
 The goal of this module is small on purpose. You will build a Claude Code overlay -- one project `CLAUDE.md`, one `settings.json`, and one skill -- and run a real session in front of it. By the end you will have something tangible: a directory you can point at, a session that loads it, and a demo where the work the overlay does is visible to you immediately.
 
 That is the whole arc. Three files, one demo, one closed loop.
 
-I am going to spend the rest of this module on three questions. First: why an overlay at all? Second: what is the minimum shape that earns its keep? Third: what is the loop you should be able to close by the end of an hour?
-
-[BEAT]
+The rest of the walk-through covers three questions. First: why an overlay at all? Second: what is the minimum shape that earns its keep? Third: what is the loop you should be able to close by the end of an hour?
 
 ## Why an overlay
-
-[CAPTURE: vanilla session on the left, overlay session on the right]
 
 When you open a vanilla Claude Code session in a fresh repo, you are running on the agent's defaults. Default model. Default effort tier. Default permission posture, where everything prompts. No knowledge of your codebase's conventions, your team's discipline, your personal pet peeves. The agent is competent at the basics, but every session starts from zero.
 
@@ -26,19 +20,15 @@ A useful test: if you took your overlay away, what would you notice? If the answ
 
 Build it small. Build it real. Layer more later.
 
-[SEGMENT BREAK]
-
 ## What is in the minimum
 
 The minimum useful overlay has three pieces.
 
 **One**, a project `CLAUDE.md` with three or four standing rules. The rules should be disciplines, not preferences. The difference matters. "Always use tabs" is a preference -- the agent's defaults are usually fine, and even if they are not, your formatter handles it. "Verify state before claiming it" is a discipline -- without it the agent will fabricate "the test passes" answers, and that erodes trust permanently.
 
-[CAPTURE: open demo-app/.claude/CLAUDE.md, scroll through the rules]
-
 In the canonical answer at `module-1-final` you will see four rules. Three of them are general -- verify state, prefer ASCII output on Windows-style terminals, finish-what-was-asked-before-pivoting. The fourth is project-specific -- read before editing, run tests before committing, read the diff with a senior reviewer's eye.
 
-That shape -- three general plus one project-specific -- is one I use across many projects. The general rules anchor the agent's posture; the project-specific rule encodes what it means to ship discipline *here*.
+That shape -- three general plus one project-specific -- is one that travels well across many projects. The general rules anchor the agent's posture; the project-specific rule encodes what it means to ship discipline *here*.
 
 **Two**, a `settings.json` that pins your model and effort tier. The flagship is `claude-opus-4-7`; the recommended effort for coding is `xhigh`. There is a `max` tier above `xhigh` -- save it for genuinely hard problems where you have seen `xhigh` fall short. The default of `xhigh` is what almost every session of yours should run on.
 
@@ -48,8 +38,6 @@ The allowlist is the lowest-leverage of the three pieces but the highest-frustra
 
 **Three**, one skill. `review-changes` -- "review the most recent changes for bugs, performance issues, and UX issues."
 
-[CAPTURE: SKILL.md frontmatter]
-
 The skill is a markdown file with frontmatter and a body. The frontmatter has two fields that matter: `name` and `description`. The description is the entire trigger. The agent decides whether to fire a skill based on how well its description matches what you just typed -- which means the description has to use the language *you* use. Not jargon. Not formal phrasing. The verbatim phrases you actually type when you want this work done.
 
 If you describe code review with "review my changes" and "look over my diff" and "audit this," put all three of those phrasings in the description. If you sometimes say "can you check this," put that in too. The description is not documentation -- it is a trigger.
@@ -58,13 +46,9 @@ The body of the skill is the instructions once the trigger fires. Checklist of w
 
 That is the minimum overlay. Three pieces. None of them complicated.
 
-[SEGMENT BREAK]
-
 ## The demo and what it earns
 
-[CAPTURE: demo-app structure, then evaluate.ts]
-
-The course's demo is a small TypeScript feature-flag evaluator. Pure functions, easy to test, easy to read. It exists for one reason: it is the target your overlay does work on.
+The companion repo's demo is a small TypeScript feature-flag evaluator. Pure functions, easy to test, easy to read. It exists for one reason: it is the target your overlay does work on.
 
 The demo intentionally ships with four review-shaped bugs. Bugs that pass the test suite but are visible to a careful reader. Off-by-one in a rollout boundary. An undefined-attribute branch that returns `true` when it should return `false`. A docstring that claims one semantic while the code implements another. A silent JSON parse failure that returns an empty array on bad input.
 
@@ -72,15 +56,11 @@ These are the kind of bugs production code actually ships with. Not toy bugs. Bu
 
 When you run your `review-changes` skill against this demo, the skill should flag at least three of the four bugs as findings. That is the closing of the loop. The overlay you built -- three files in `.claude/` -- just made four real bugs visible to you in one session that you would not have seen otherwise.
 
-[BEAT]
-
 That is what "earns its keep" means. You can ship the minimum overlay in an hour. The skill catches three of four bugs. The model and effort pin produces consistent output across sessions. The allowlist stops the prompt fatigue. The rules anchor the agent's posture so it stops fabricating "tests pass" answers.
 
 Without these, you are at the agent's defaults forever.
 
 ## What you build, what you skip
-
-[CAPTURE: STRUCTURE.md showing module-1-final layout]
 
 Things to build in module 1:
 
@@ -108,11 +88,7 @@ By the end of module 1, you should be able to do this:
 
 If those three steps work, you have shipped a minimum useful overlay. That is the entire deliverable for module 1.
 
-[SEGMENT BREAK]
-
 ## What module 2 builds on top
-
-[CAPTURE: STRUCTURE.md showing module-2-final layout]
 
 Module 2 takes the single flat `CLAUDE.md` and splits it into a manifest plus discipline-specific rule files. The pattern is called rule-layering -- as the overlay grows, you stop putting everything in one file and start scoping rules by discipline (scope, terminal, self-state, ...). Each rule lives in its own file. The manifest pulls them in via @-includes.
 
@@ -122,10 +98,8 @@ The shape of module 2 is the shape of an overlay that earns its keep on a daily 
 
 ## Wrap
 
-[CAPTURE: terminal showing git diff module-1-start module-1-final -- demo-app/.claude/]
-
 The exercise for module 1 is in `exercises/module-1/exercise.md`. Check out `module-1-start`, build your overlay, and run the loop above. If you get stuck, the canonical answer is at `module-1-final` and `solution.md` walks the reasoning behind each choice.
 
 Three files. One closed loop. That is module 1.
 
-Module 2, next.
+Module 2 is next.

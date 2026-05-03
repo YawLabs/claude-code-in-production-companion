@@ -1,6 +1,6 @@
-# Lectures
+# Walk-throughs
 
-Lecture scripts for the four modules. Each script is a complete walkthrough of the module's content -- the version I read from when recording the video.
+Long-form walk-throughs that complement the book chapters. Each one is a complete, prose-shaped pass over the material a single module covers, written so you can read it standalone if you prefer reading to working through the chapter exercises.
 
 ```
 lectures/
@@ -12,6 +12,13 @@ lectures/
 
 All four modules are populated.
 
-The scripts include cues for the recording (when to switch to the screen capture, when to pause for emphasis, where the segments break for the video editor) but read fine as standalone documents if you prefer prose to video.
+The directory is named `lectures/` because the matching `module-N-final` git tags use the `module-N` label. The contents are book-companion prose, not lecture scripts.
 
-If you spot a script that doesn't match the corresponding video or the matching module's reference code, file an issue.
+Each walk-through pairs with specific book chapters:
+
+- `module-1-the-minimum-overlay.md` -- chapters 2-3
+- `module-2-the-expanding-contract.md` -- chapters 4-6
+- `module-3-reliability-and-verification.md` -- chapters 5, 7, 8
+- `module-4-team-posture.md` -- chapters 6, 11
+
+If a walk-through doesn't match the corresponding book chapter or the matching `module-N-final` tag, file an issue.

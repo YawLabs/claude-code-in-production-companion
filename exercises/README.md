@@ -20,4 +20,11 @@ exercises/
 
 All four modules are populated.
 
+The exercises here collect the book's per-chapter Try-this prompts into four coherent end states. Chapter-to-module mapping:
+
+- `module-1/` -- chapters 2-3
+- `module-2/` -- chapters 4-6
+- `module-3/` -- chapters 5, 7, 8
+- `module-4/` -- chapters 6, 11
+
 Open the exercise. Try it. If you get stuck, read the solution -- but the work is in the trying.
