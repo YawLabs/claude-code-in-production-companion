@@ -2,7 +2,7 @@
 
 What lives at each tag. Use this as a map when diffing your own work against the reference.
 
-The course builds a Claude Code overlay on top of a small TypeScript codebase. The codebase itself stays nearly stable across modules; what changes is the *overlay* -- the rules, settings, skills, hooks, and memory that turn a bare Claude Code session into a production-discipline setup.
+The book builds a Claude Code overlay on top of a small TypeScript codebase across chapters 2-11's Try-this exercises. The codebase itself stays nearly stable across modules; what changes is the *overlay* -- the rules, settings, skills, hooks, and memory that turn a bare Claude Code session into a production-discipline setup.
 
 Each module has both a `module-N-start` and a `module-N-final` tag. The start tag is where the exercise begins (typically the previous module's end state); the final tag is the canonical end state of that module.
 
@@ -36,7 +36,7 @@ demo-app/
 
 `LICENSE` and `.gitignore` are at the repo root and apply to everything including the demo.
 
-`.claude/CLAUDE.md` is one flat file at this stage, holding four standing rules. The pattern of splitting into discipline-specific files lands in module 2 -- module 1 is about getting the loop closed: real session, real rules, real skill.
+`.claude/CLAUDE.md` is one flat file at this stage, holding four standing rules. The pattern of splitting into discipline-specific files lands in module 2 -- module 1 is about getting the loop closed: real session, real rules, real skill. The chapter-1 / chapter-2 Try-this exercises land you here.
 
 `.claude/settings.json` pins `model: claude-opus-4-7` and `effortLevel: xhigh`. Permission allowlist is curated -- read-only tools (`Read`, `Glob`, `Grep`) and edit tools (`Edit`, `Write`) allowed unconditionally; the project's specific Bash subcommands (`npm test`, `npm run build`, `npm run lint:fix`, `git status`, `git diff`, `git log`) allowed; everything else still prompting.
 
@@ -145,7 +145,7 @@ CI integration lands. `claude-review.yml` is a workflow that fires on pull reque
 
 `CONTRIBUTING.md` at the demo-app root is the new-teammate onboarding doc. It covers: what `.claude/` is, first-time setup, the shared-vs-personal split for settings and memory, the pre-commit checklist, how the CI workflows fire, where to file issues.
 
-The course finishes with a setup that a team of three to five engineers can adopt without further configuration -- the floor is in place, the personal overrides are clearly delineated, the CI integration is doing the agent-side reviewing, and the overlay is something a new collaborator can ramp into in a single session.
+The book finishes with a setup that a team of three to five engineers can adopt without further configuration -- the floor is in place, the personal overrides are clearly delineated, the CI integration is doing the agent-side reviewing, and the overlay is something a new collaborator can ramp into in a single session.
 
 ## What changes between tags
 
@@ -158,4 +158,4 @@ git diff module-3-start module-3-final
 git diff module-4-start module-4-final
 ```
 
-Each diff is the shape of one module's lessons applied to a real codebase.
+Each diff is the shape of one chapter's exercise applied to a real codebase.

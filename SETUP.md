@@ -1,24 +1,24 @@
 # Setup
 
-How to get the reference repo running locally and wired up to Claude Code.
+How to get the book's companion repo running locally and wired up to Claude Code.
 
 Note: the commands below assume you have checked out a module tag (`module-1-final` and onward). The `main` branch is documentation only and has no `package.json`.
 
 ## Prerequisites
 
-* **A GitHub account.** Course access is granted via GitHub collaborator invitation after purchase. Accept the invite from your account before running the clone command below.
-* **Claude Code installed.** The course assumes a working Claude Code installation. If you are on the Anthropic-managed CLI, you are good. If you are on a custom build, the rule and skill paths in the reference may sit in a slightly different place; the SETUP notes per module call out the differences.
+* **A GitHub account.** Companion-repo access is granted via GitHub collaborator invitation after purchase. Accept the invite from your account before running the clone command below.
+* **Claude Code installed.** The book assumes a working Claude Code installation. If you are on the Anthropic-managed CLI, you are good. If you are on a custom build, the rule and skill paths in the reference may sit in a slightly different place; the SETUP notes per module call out the differences.
 * **Node.js 20 or later.** The demo app is a small TypeScript project; the build assumes a modern Node.
 * **Git.** You will be checking out tags and producing diffs.
-* **A terminal you trust to run agentic sessions.** If your terminal mangles Unicode (Windows ConPTY is the most common offender), Chapter 10 of the book covers the ASCII-discipline workaround. The course examples already use ASCII-safe output everywhere terminal output appears.
+* **A terminal you trust to run agentic sessions.** If your terminal mangles Unicode (Windows ConPTY is the most common offender), Chapter 10 of the book covers the ASCII-discipline workaround. The companion examples already use ASCII-safe output everywhere terminal output appears.
 
 ## Clone and check out a module
 
-The repo is private course material. Once you have accepted the GitHub collaborator invitation that arrives after purchase, the clone command behaves like any other repo you can read:
+The repo is private companion material for the book. Once you have accepted the GitHub collaborator invitation that arrives after purchase, the clone command behaves like any other repo you can read:
 
 ```bash
-git clone https://github.com/YawLabs/production-claude-code
-cd production-claude-code
+git clone https://github.com/YawLabs/claude-code-in-production-companion
+cd claude-code-in-production-companion
 git checkout module-1-final
 ```
 
@@ -32,7 +32,7 @@ npm run build
 npm test
 ```
 
-If those three commands all succeed, the demo app is good. The course modules will exercise this app -- you'll ask Claude Code to fix bugs in it, refactor pieces of it, and review your changes.
+If those three commands all succeed, the demo app is good. The book's chapter Try-this exercises will exercise this app -- you'll ask Claude Code to fix bugs in it, refactor pieces of it, and review your changes.
 
 ## Wire up Claude Code
 
@@ -44,17 +44,17 @@ To verify, in a Claude Code session, run:
 /status
 ```
 
-(Module 2 onwards has a `status` skill that reports mode, model, effort, active overlay. Module 1 doesn't have it yet; check by inspecting the model field in the harness UI.)
+(`module-2-final` onwards has a `status` skill that reports mode, model, effort, active overlay. `module-1-final` doesn't have it yet; check by inspecting the model field in the harness UI.)
 
 ## Personal overrides
 
-After module 4, the overlay distinguishes between team-shared (`settings.json`) and personal (`settings.local.json`) configuration. The repo includes a `settings.local.json.example` at the module-4 tag; copy it to `settings.local.json` and fill in any per-developer credentials or preferences. The `.gitignore` already excludes `settings.local.json` from version control.
+At `module-4-final`, the overlay distinguishes between team-shared (`settings.json`) and personal (`settings.local.json`) configuration. The repo includes a `settings.local.json.example` at the module-4 tag; copy it to `settings.local.json` and fill in any per-developer credentials or preferences. The `.gitignore` already excludes `settings.local.json` from version control.
 
-For modules 1-3, all configuration is in `settings.json` because the course hasn't reached the team-posture material yet.
+For `module-1-final` through `module-3-final`, all configuration is in `settings.json` because Chapter 11's team-posture material hasn't applied yet.
 
 ## MCP servers
 
-If a module requires a specific MCP server (modules 3 and 4 do, for the dependency audit and the cost-monitoring patterns), the README at that tag will document which one and how to configure it. You bring your own credentials for any third-party services -- the course never asks you to share keys with the reference materials.
+If a module requires a specific MCP server (`module-3-final` and `module-4-final` do, for the dependency audit and the cost-monitoring patterns), the README at that tag will document which one and how to configure it. You bring your own credentials for any third-party services -- the book never asks you to share keys with the reference materials.
 
 ## Diffing your work against the reference
 
@@ -79,9 +79,9 @@ See `TROUBLESHOOTING.md` for the issues that come up most often. The short list:
 
 * Claude Code can't find the `.claude/` directory -- you started the session in the wrong working directory.
 * The model field in `settings.json` doesn't match what you're running -- your harness has a global override that's winning.
-* A skill isn't firing -- the description doesn't match the natural-language phrasings the course expects you to use.
+* A skill isn't firing -- the description doesn't match the natural-language phrasings the book expects you to use.
 * A hook isn't firing -- it's registered but hitting the typo or matcher mismatch covered in TROUBLESHOOTING.
 
 ## Getting help
 
-If you're stuck after reading TROUBLESHOOTING and diffing against the reference, check the course Discord. If the issue is with the reference materials themselves, file an issue on this repo.
+If you're stuck after reading TROUBLESHOOTING and diffing against the reference, file an issue on this repo. If the issue is with the reference materials themselves (a tag is wrong, a SETUP step doesn't reproduce), an issue here is the right place.
