@@ -6,7 +6,7 @@ This repo holds the canonical end-of-module checkpoints for the overlay you buil
 
 Companion course to *Claude Code in Production* (the book at `github.com/YawLabs/claude-code-in-production`). If the book is the discipline, this course is the worked example -- you build a real overlay across four modules, on a real codebase, and end with a setup that's ready to ship production software.
 
-Course link: https://yaw.sh/courses/production-claude-code
+Course link: https://yaw.sh/production-claude-code
 
 Note: `main` is documentation only. The overlay and the demo app live at the module tags (`module-1-final` through `module-4-final`) -- check one out before the SETUP.md commands will work.
 
@@ -55,7 +55,7 @@ The start and final tags bracket each module's exercise. `module-N-start` is the
 
 This repo is private course material. Access is granted via GitHub collaborator invitation after purchase:
 
-1. Buy the course at https://yaw.sh/courses/production-claude-code
+1. Buy the course at https://yaw.sh/production-claude-code
 2. You receive an automated email with a GitHub collaborator invitation to this repo.
 3. Accept the invitation. From then on, the repo behaves like any other GitHub repo you can read -- clone, fetch, check out tags.
 
@@ -87,7 +87,7 @@ This is paid course material licensed for personal use by the purchasing license
 
 Yaw Labs.
 
-- Course: https://yaw.sh/courses/production-claude-code
+- Course: https://yaw.sh/production-claude-code
 - Book: https://github.com/YawLabs/claude-code-in-production
 - Issues: file them on this repo for problems with the reference materials.
 
