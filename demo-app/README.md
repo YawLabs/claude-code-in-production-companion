@@ -1,6 +1,6 @@
 # demo-app
 
-A tiny feature-flag evaluator. Pure functions, easy to test. The course uses it as the codebase Claude Code sessions run on top of.
+A tiny feature-flag evaluator. Pure functions, easy to test. The book uses it as the codebase Claude Code sessions run on top of.
 
 ## Install and run
 
